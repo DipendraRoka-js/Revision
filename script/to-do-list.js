@@ -45,7 +45,6 @@ function addTodo() {
 
   todoInput.value = '';
   dateInput.value = '';
-
   showTodoList();
 }
 

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autoboxing</title>
+</head>
+<body>
+
+<p> Youtube Subscribe Button</p>
+<button onClick ="
+changeButtonText()"
+class="subscribed-button">Subscribe</button>
+
+
+<p> Rock Paper Scissors</p>
+
+<p>Amazon shipping Calculator</p>
+<input type="number" class ="impt" placeholder="Enter the price of the item" onKeydown = "keeey(event);">
+<button onclick="calculateShipping()">Calculate</button>
+<p class="shipping"></p>
+
+<script>
+
+  function keeey(event){
+    if(event.key === 'Enter'){
+      calculateShipping();
+    }
+  }
+
+  function changeButtonText(){
+    const buttonElement = document.querySelector('.subscribed-button');
+
+    if(buttonElement.innerText === 'Subscribe'){
+      buttonElement.innerText = 'Subscribed';
+      buttonElement.style.backgroundColor = 'red';
+      buttonElement.style.color = 'white';
+    }
+    else{
+      buttonElement.innerText = 'Subscribe';
+      buttonElement.style.backgroundColor = 'grey';
+      buttonElement.style.color = 'black';
+    }
+  }
+
+  function calculateShipping(){
+    const price = parseFloat(document.querySelector('.impt').value);
+    const ship = price <= 40 ? price + 10 : price;
+    document.querySelector('.shipping').innerText = `Shipping cost is: ${ship}`;
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock Paper Scissors</title>
+  <style>
+    body{
+      color: white;
+      background-color: black;
+    }
+
+    .title{
+      font-size: 50px;
+      font-weight: bold;
+    }
+
+    .choice-img{
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background-color: transparent;
+      border: 2px solid white;
+      cursor: pointer;
+      margin-right:60px;
+    }
+
+    .move-icon{
+      width: 50px;
+      vertical-align: middle;
+    }
+
+    .js-result{
+      font-size: 30px;
+      font-weight: bold;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <p class="title">Rock Paper Scissors</p>
+
+  <button onClick="playGame('Rock')">
+    <img src="rock.png" class="choice-img" alt="Rock">
+  </button>
+
+  <button onClick="playGame('Paper')">
+    <img src="paper.jpeg" class="choice-img" alt="Paper">
+  </button>
+
+  <button onClick="playGame('Scissors')">
+    <img src="scissors.png" class="choice-img" alt="Scissors">
+  </button>
+
+  <p class="js-result"></p>
+  <p class="js-moves"></p>
+  <p class="result"></p>
+
+  <button onClick="
+    score.wins = 0;
+    score.losses = 0;
+    score.ties = 0;
+    localStorage.removeItem('score');
+    updateScoreElement();
+    alert('Score was reset');
+  ">
+    Reset
+  </button>
+
+<script>
+const score = JSON.parse(localStorage.getItem('score')) || {
+  wins: 0,
+  losses: 0,
+  ties: 0
+};
+
+updateScoreElement();
+
+function playGame(playerChoice){
+
+  const computerChoice = getComputerChoice();
+  let result = '';
+
+  if (playerChoice === 'Paper'){
+    if(computerChoice === 'Rock'){
+      result = 'You Win';
+    }
+    else if(computerChoice === 'Paper'){
+      result = 'You Tied';
+    }
+    else{
+      result = 'You Lose';
+    }
+  }
+  else if(playerChoice === 'Rock'){
+    if(computerChoice === 'Rock'){
+      result = 'You Tied';
+    }
+    else if(computerChoice === 'Paper'){
+      result = 'You Lose';
+    }
+    else{
+      result = 'You Win';
+    }
+  }
+  else{
+    if(computerChoice === 'Rock'){
+      result = 'You Lose';
+    }
+    else if(computerChoice === 'Paper'){
+      result = 'You Win';
+    }
+    else{
+      result = 'You Tied';
+    }
+  }
+
+  if (result === 'You Win'){
+    score.wins += 1;
+  }
+  else if(result === 'You Lose'){
+    score.losses += 1;
+  }
+  else{
+    score.ties += 1;
+  }
+
+  localStorage.setItem('score', JSON.stringify(score));
+  updateScoreElement();
+
+  const imageMap = {
+    Rock: 'rock.png',
+    Paper: 'paper.jpeg',
+    Scissors: 'scissors.png'
+  };
+
+  document.querySelector('.js-moves').innerHTML = `
+    You
+    <img src="${imageMap[playerChoice]}" class="move-icon">
+    vs
+    Computer
+    <img src="${imageMap[computerChoice]}" class="move-icon">
+  `;
+
+  document.querySelector('.js-result').innerHTML = result;
+}
+
+function updateScoreElement(){
+  document.querySelector('.result').innerHTML =
+    `Wins: ${score.wins}<br>
+     Losses: ${score.losses}<br>
+     Ties: ${score.ties}`;
+}
+
+function getComputerChoice(){
+  const randomNumber = Math.random();
+
+  if(randomNumber < 1/3){
+    return 'Rock';
+  }
+  else if(randomNumber < 2/3){
+    return 'Paper';
+  }
+  else{
+    return 'Scissors';
+  }
+}
+</script>
+
+</body>
+</html>

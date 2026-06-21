@@ -65,6 +65,8 @@ forEach((button) => {
   button.addEventListener('click', () =>{
     const productId = button.dataset.productId;
 
+    //ewe are going to iterate through each element in the array and then it found we append but 
+    //but if new we jsut pus it 
     let matchingItem;
     cart.forEach((item)=>{
       if(productId === item.productId){
@@ -81,12 +83,17 @@ forEach((button) => {
     });
     }
 
-//for cart qunatity to show ok
+
+//for cart qunatity to show ok 
     let cartQuantity = 0;
     cart.forEach((item)=>{
       cartQuantity += item.quantity;
     })
 
+    //changing the html element inside by using queryselector 
     document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
   });
+
 });
+
+

@@ -1,3 +1,5 @@
+import { cart } from "../data/cart";
+
 //data structure for each product so as to iterate through each product
 //combining all the html 
 let productsHTML ='';

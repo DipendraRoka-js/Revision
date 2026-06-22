@@ -1,4 +1,6 @@
-import { cart } from "../data/cart";
+import { cart, addToCart } from "../data/cart.js";
+import { products } from "../data/products.js";
+
 
 //data structure for each product so as to iterate through each product
 //combining all the html 
@@ -60,40 +62,26 @@ products.forEach((product)=>{
 //showing in the html ok 
 document.querySelector('.js-products-grid').innerHTML = productsHTML;
 
-//this is best for to loop through our each cart content using data attributes 
-//in the html the syntax for the data attributes is data-box-quantity which is camel case.
+
+export function updateCartQuantity(){
+  let cartQuantity = 0;
+    cart.forEach((cartItem)=>{
+      cartQuantity += cartItem.quantity;
+    });
+//changing the html element inside by using queryselector 
+document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
+ }
+
+ 
+//this is best for to loop through our each cart content using data attributes
 document.querySelectorAll('.js-add-to-cart').
 forEach((button) => {
   button.addEventListener('click', () =>{
     const productId = button.dataset.productId;
-
-    //ewe are going to iterate through each element in the array and then it found we append but 
-    //but if new we jsut pus it 
-    let matchingItem;
-    cart.forEach((item)=>{
-      if(productId === item.productId){
-        matchingItem = item;
-      }
-    });
-
-    if(matchingItem){
-      matchingItem.quantity +=1;
-    }else{
-      cart.push({
-      productId:productId,
-      quantity:1
-    });
-    }
+    addToCart(productId);
+    updateCartQuantity();
 
 
-//for cart qunatity to show ok 
-    let cartQuantity = 0;
-    cart.forEach((item)=>{
-      cartQuantity += item.quantity;
-    })
-
-    //changing the html element inside by using queryselector 
-    document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
   });
 
 });

@@ -6,10 +6,9 @@ import { formatCurrency } from "./utils/money.js";
 let cartSummaryHtml = '';
 
 cart.forEach((cartItem)=>{
-
   const productId = cartItem.productId;
   let matchingProduct;
-
+  
   products.forEach((product)=>{
     if(product.id === productId){
       matchingProduct = product;
@@ -103,11 +102,9 @@ document.querySelectorAll('.js-delete-link')
     link.addEventListener('click', () => {
       const productId = link.dataset.productId;
       removeFromCart(productId);
-
       const container = document.querySelector(
         `.js-cart-item-container-${productId}`
       );
-
       container.remove();
     });
   });

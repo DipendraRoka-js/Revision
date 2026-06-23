@@ -57,7 +57,7 @@ products.forEach((product)=>{
             Add to Cart
           </button>
         </div>`;
-})
+});
 
 
 //showing in the html ok 

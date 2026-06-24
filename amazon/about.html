@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>About Amazon</title>
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+  background:#f8f9fa;
+  color:#232f3e;
+}
+
+.hero{
+  height:70vh;
+  background:
+  linear-gradient(
+  rgba(0,0,0,.6),
+  rgba(0,0,0,.6)),
+  url('https://images.unsplash.com/photo-1556740749-887f6717d7e4');
+  background-size:cover;
+  background-position:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+}
+
+.hero-content{
+  max-width:800px;
+}
+
+.hero h1{
+  font-size:4rem;
+  margin-bottom:20px;
+}
+
+.hero p{
+  font-size:1.3rem;
+  line-height:1.8;
+}
+
+.section{
+  padding:80px 10%;
+}
+
+.section-title{
+  text-align:center;
+  font-size:2.5rem;
+  margin-bottom:50px;
+}
+
+.story{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:50px;
+  align-items:center;
+}
+
+.story img{
+  width:100%;
+  border-radius:20px;
+}
+
+.story-text p{
+  line-height:1.9;
+  color:#555;
+}
+
+.stats{
+  background:white;
+}
+
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:30px;
+}
+
+.stat-card{
+  background:white;
+  padding:40px;
+  border-radius:15px;
+  text-align:center;
+  box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.stat-card h2{
+  color:#ff9900;
+  font-size:3rem;
+}
+
+.stat-card p{
+  margin-top:10px;
+  color:#666;
+}
+
+.mission{
+  background:#232f3e;
+  color:white;
+}
+
+.mission-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+}
+
+.card{
+  background:#37475a;
+  padding:35px;
+  border-radius:15px;
+}
+
+.card h3{
+  margin-bottom:20px;
+  color:#ff9900;
+}
+
+.card p{
+  line-height:1.8;
+}
+
+.values-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+}
+
+.value-card{
+  background:white;
+  padding:30px;
+  border-radius:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.value-card h3{
+  margin-bottom:15px;
+  color:#ff9900;
+}
+
+.value-card p{
+  color:#666;
+  line-height:1.7;
+}
+
+.team{
+  background:#fff;
+}
+
+.team-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+
+.team-card{
+  text-align:center;
+  background:white;
+  padding:30px;
+  border-radius:15px;
+  box-shadow:0 5px 15px rgba(0,0,0,.08);
+}
+
+.team-card img{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-bottom:20px;
+}
+
+.team-card h3{
+  margin-bottom:10px;
+}
+
+.team-card p{
+  color:#666;
+}
+
+footer{
+  background:#131a22;
+  color:white;
+  text-align:center;
+  padding:40px;
+}
+
+footer p{
+  color:#ccc;
+}
+
+@media(max-width:768px){
+
+.hero h1{
+  font-size:2.8rem;
+}
+
+.story,
+.mission-grid{
+  grid-template-columns:1fr;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>About Amazon</h1>
+    <p>
+      We strive to be Earth's most customer-centric company,
+      where customers can discover anything they might want
+      to buy online.
+    </p>
+  </div>
+</section>
+
+<section class="section">
+  <h2 class="section-title">Our Story</h2>
+
+  <div class="story">
+
+    <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a">
+
+    <div class="story-text">
+      <p>
+        Amazon began with a simple mission:
+        make online shopping faster, easier,
+        and more reliable for everyone.
+
+        Since its founding, Amazon has evolved
+        into a global marketplace connecting
+        millions of customers with products,
+        services, and innovative technologies.
+
+        Today, Amazon continues to focus on
+        customer obsession, innovation, and
+        long-term thinking.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<section class="section stats">
+
+  <h2 class="section-title">
+    Amazon By The Numbers
+  </h2>
+
+  <div class="stats-grid">
+
+    <div class="stat-card">
+      <h2>300M+</h2>
+      <p>Active Customers</p>
+    </div>
+
+    <div class="stat-card">
+      <h2>1.5M+</h2>
+      <p>Employees Worldwide</p>
+    </div>
+
+    <div class="stat-card">
+      <h2>100+</h2>
+      <p>Countries Served</p>
+    </div>
+
+    <div class="stat-card">
+      <h2>Millions</h2>
+      <p>Products Available</p>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section mission">
+
+  <h2 class="section-title">
+    Mission & Vision
+  </h2>
+
+  <div class="mission-grid">
+
+    <div class="card">
+      <h3>Our Mission</h3>
+      <p>
+        To continually raise the bar of the
+        customer experience by using the internet
+        and technology to help consumers find,
+        discover and buy anything online.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Our Vision</h3>
+      <p>
+        To become the world's most customer-centric
+        company where people can discover and buy
+        anything they want online.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section">
+
+  <h2 class="section-title">
+    Core Values
+  </h2>
+
+  <div class="values-grid">
+
+    <div class="value-card">
+      <h3>Customer Obsession</h3>
+      <p>
+        Customers are at the center of everything
+        we do.
+      </p>
+    </div>
+
+    <div class="value-card">
+      <h3>Innovation</h3>
+      <p>
+        We constantly invent and simplify.
+      </p>
+    </div>
+
+    <div class="value-card">
+      <h3>Ownership</h3>
+      <p>
+        Leaders think long term and act on behalf
+        of the entire company.
+      </p>
+    </div>
+
+    <div class="value-card">
+      <h3>Excellence</h3>
+      <p>
+        We strive for the highest standards.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section team">
+
+  <h2 class="section-title">
+    Leadership Team
+  </h2>
+
+  <div class="team-grid">
+
+    <div class="team-card">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg">
+      <h3>Andy Jassy</h3>
+      <p>Chief Executive Officer</p>
+    </div>
+
+    <div class="team-card">
+      <img src="https://randomuser.me/api/portraits/women/44.jpg">
+      <h3>Sarah Johnson</h3>
+      <p>Chief Technology Officer</p>
+    </div>
+
+    <div class="team-card">
+      <img src="https://randomuser.me/api/portraits/men/50.jpg">
+      <h3>Michael Chen</h3>
+      <p>Head of Innovation</p>
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+  <h2>Amazon</h2>
+  <br>
+  <p>
+    Delivering smiles through innovation,
+    technology, and customer obsession.
+  </p>
+</footer>
+
+</body>
+</html>

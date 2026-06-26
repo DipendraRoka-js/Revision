@@ -61,7 +61,7 @@ export function addToCart(productId){
         }
       });
 
-    matchingItem.deliveryOptionId === deliveryOptionId;
+    matchingItem.deliveryOptionId = deliveryOptionId;
     saveToStorage();
 
  }

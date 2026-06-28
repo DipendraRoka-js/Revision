@@ -6,7 +6,6 @@ import {deliveryOptions, getDeliveryOption} from "../../data/deliveryOption.js";
 import { renderPaymentSummary } from "./paymentSummary.js";
 
 
-
 export function renderOrderSummary(){
 function deliveryOptionsHTML(matchingProduct,cartItem){
   let html='';
@@ -16,7 +15,7 @@ function deliveryOptionsHTML(matchingProduct,cartItem){
       deliveryOption.deliveryDays,'days'
     );
     const dateString = deliveryDate.format(('dddd, MMMM D'));
-
+    
     const priceString = deliveryOption.priceCents === 0 ? 'Free':`$${formatCurrency(deliveryOption.priceCents)}-`;
 
     const isChecked = deliveryOption.id === cartItem.deliveryOptionId;
@@ -56,8 +55,7 @@ cart.forEach((cartItem)=>{
   const deliveryOptionId = cartItem.deliveryOptionId;
   const deliveryOption = getDeliveryOption(deliveryOptionId);
 
-
-  const today =dayjs();
+  const today = dayjs();
     const deliveryDate = today.add(
       deliveryOption.deliveryDays,'days'
     );
@@ -111,7 +109,7 @@ document.querySelector('.js-order-summary').innerHTML = cartSummaryHtml;
 document.querySelectorAll('.js-delete-link')
   .forEach((link) => {
     link.addEventListener('click', () => {
-      const productId = link.dataset.productId;
+      const {productId} = link.dataset;
       removeFromCart(productId);
       renderPaymentSummary();
 

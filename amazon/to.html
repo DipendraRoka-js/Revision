@@ -1,0 +1,22 @@
+const nums = [3, 15, 7, 22, 1, 18];
+
+const result = nums.filter(n => n > 10);
+// [15, 22, 18]
+
+
+const users = [
+  { name: "Alice", active: true },
+  { name: "Bob",   active: false },
+  { name: "Carol", active: true },
+];
+
+const activeUsers = users.filter(u => u.active);
+// [{ name: "Alice", ... }, { name: "Carol", ... }]
+
+
+const items = ["apple", "banana", "apple", "orange", "banana"];
+
+const unique = items.filter(
+  (item, index, arr) => arr.indexOf(item) === index
+);
+// ["apple", "banana", "orange"]

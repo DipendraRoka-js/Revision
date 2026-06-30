@@ -1,4 +1,3 @@
-
 function Cart(localStoragekey){
 const cart = {
   cartItems :undefined,
@@ -21,7 +20,7 @@ const cart = {
 
 
 saveToStorage() {
-  localStorage.setItem('cart-oop', JSON.stringify(this.cartItems));
+  localStorage.setItem(localStoragekey, JSON.stringify(this.cartItems));
 },
 
 
@@ -79,5 +78,8 @@ const cart = Cart('cart-oop');
 const businessCart = Cart('cart-business');
 
 cart.loadFromStorage();
+businessCart.loadFromStorage();
 
+
+export { cart, businessCart};
 
